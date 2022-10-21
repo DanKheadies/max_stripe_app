@@ -11,19 +11,38 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Stripe Example'),
       ),
-      body: ListTile(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const CardFormScreen(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CardFormScreen(),
+                ),
+              );
+            },
+            title: const Text('Go to the Card Form'),
+            trailing: const Icon(
+              Icons.chevron_right_rounded,
             ),
-          );
-        },
-        title: const Text('Go to the Card Form'),
-        trailing: const Icon(
-          Icons.chevron_right_rounded,
-        ),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PanScreen(),
+                ),
+              );
+            },
+            title: const Text('Go to Pan Playground'),
+            trailing: const Icon(
+              Icons.fingerprint,
+            ),
+          ),
+        ],
       ),
     );
   }
